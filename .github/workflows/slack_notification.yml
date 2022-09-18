@@ -1,0 +1,21 @@
+name: teast-notification
+
+on:
+  push:
+    branches: ["test/slack-notification"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: slack notification test 1
+        id: slack
+        uses: slackapi/slack-github-action@v1.22.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: slack notification test 2
+        id: slack2
+        uses: slackapi/slack-github-action@v1.22.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
