@@ -11,11 +11,21 @@ jobs:
       - name: slack notification test 1
         id: slack
         uses: slackapi/slack-github-action@v1.22.0
+        with:
+          payload: |
+            {
+              "text": "action-1"
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: slack notification test 2
         id: slack2
         uses: slackapi/slack-github-action@v1.22.0
+        with:
+          payload: |
+            {
+              "text": "action-2"
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
